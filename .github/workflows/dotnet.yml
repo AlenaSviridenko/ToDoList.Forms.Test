@@ -26,10 +26,8 @@ jobs:
         dotnet-version: '5.0.x'
 
     - name: Install dependencies
-      run: dotnet restore
+      run: dotnet restore $GITHUB_WORKSPACE/Todo.sln
 
     - name: Build
       run: |
-        ls -l
-        echo $GITHUB_WORKSPACE
         msbuild $GITHUB_WORKSPACE/Todo.iOS/Todo.iOS.csproj /p:Configuration=Debug /p:Platform=iPhoneSimulator /t:Rebuild

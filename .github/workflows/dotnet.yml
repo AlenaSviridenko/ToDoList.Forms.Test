@@ -32,4 +32,4 @@ jobs:
       run: |
         ls -l
         echo $GITHUB_WORKSPACE
-        msbuild $GITHUB_WORKSPACE/ToDoList.Forms.Test/Todo.iOS/Todo.iOS.csproj /p:Configuration=Debug /p:Platform=iPhoneSimulator /t:Rebuild
+        msbuild $GITHUB_WORKSPACE/Todo.iOS/Todo.iOS.csproj /p:Configuration=Debug /p:Platform=iPhoneSimulator /t:Rebuild

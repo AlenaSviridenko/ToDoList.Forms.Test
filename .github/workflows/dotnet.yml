@@ -18,7 +18,7 @@ jobs:
     
     - name: Set default Xcode 12.3
       run: |
-        xcode-select -s /Applications/Xcode_12.3.0.app/Contents/Developer
+        sudo xcode-select -s /Applications/Xcode_12.3.0.app/Contents/Developer
 
     - name: Setup .NET Core SDK 5.x
       uses: actions/setup-dotnet@v1

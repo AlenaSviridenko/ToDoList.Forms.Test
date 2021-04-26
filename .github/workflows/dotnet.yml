@@ -11,14 +11,16 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Select default Xamarin bundle to 6_12_6
+    - name: Select default Xamarin bundle to 6_10_0
       run: |
-        XAMARIN_SDK=6_12_6
+        XAMARIN_SDK=6_10_0
         $VM_ASSETS/select-xamarin-sdk.sh $XAMARIN_SDK
     
-    - name: Set default Xcode 12.3
+    - name: Set default Xcode 11.6
       run: |
-        sudo xcode-select -s /Applications/Xcode_12.3.0.app/Contents/Developer
+        XCODE_ROOT=/Applications/Xcode_11.6.0.app
+        echo "MD_APPLE_SDK_ROOT=$XCODE_ROOT" >> $GITHUB_ENV
+        sudo xcode-select -s $XCODE_ROOT/Contents/Developer
 
     - name: Setup .NET Core SDK 5.x
       uses: actions/setup-dotnet@v1

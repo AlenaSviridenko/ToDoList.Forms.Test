@@ -13,12 +13,11 @@ jobs:
     - uses: actions/checkout@v2
     - name: Select default Xamarin bundle to 6_10_0
       run: |
-        XAMARIN_SDK=6_10_0
-        $VM_ASSETS/select-xamarin-sdk.sh $XAMARIN_SDK
+        $VM_ASSETS/select-xamarin-sdk-v2.sh --mono=6.10 --ios=13.16
     
-    - name: Set default Xcode 11.6
+    - name: Set default Xcode 12.3
       run: |
-        XCODE_ROOT=/Applications/Xcode_11.6.0.app
+        XCODE_ROOT=/Applications/Xcode_12.3.0.app
         echo "MD_APPLE_SDK_ROOT=$XCODE_ROOT" >> $GITHUB_ENV
         sudo xcode-select -s $XCODE_ROOT
 

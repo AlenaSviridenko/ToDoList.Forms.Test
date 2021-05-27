@@ -15,8 +15,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Select default Xamarin bundle to 6_12_6
       run: |
-        XAMARIN_SDK=6_12_6
-        $VM_ASSETS/select-xamarin-sdk.sh $XAMARIN_SDK
+        $VM_ASSETS/select-xamarin-sdk-v2.sh --mono=6.10 --android=10.2
 
     - name: Setup .NET Core SDK 5.x
       uses: actions/setup-dotnet@v1
